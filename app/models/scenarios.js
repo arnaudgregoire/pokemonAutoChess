@@ -15042,7 +15042,7 @@ const SCENARIOS =
         'board':
         [
           {
-            'name': 'salamance',
+            'name': 'salamence',
             'x': 4,
             'y': 1
           },
@@ -15088,7 +15088,7 @@ const SCENARIOS =
         'board':
         [
           {
-            'name': 'salamance',
+            'name': 'salamence',
             'x': 4,
             'y': 1
           },
