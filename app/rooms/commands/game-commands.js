@@ -533,14 +533,28 @@ class OnUpdatePhaseCommand extends Command {
     return commands;
   }
 
-  computePlayerDamage(redTeam, playerLevel) {
+  computePlayerDamage(redTeam, playerLevel, stageLevel) {
     let damage = playerLevel - 2;
+    let multiplier = 1;
+    if(stageLevel >= 10){
+      multiplier = 1.5;
+    }
+    else if(stageLevel >= 15){
+      multiplier = 2;
+    }
+    else if(stageLevel >= 20){
+      multiplier = 2.5;
+    }
+    else if(stageLevel >= 25){
+      multiplier = 3.0;
+    }
+
     if (redTeam.size > 0) {
       redTeam.forEach((pokemon, key) => {
         damage += pokemon.stars;
       });
     }
-    damage = Math.max(damage, 0);
+    damage = Math.max(Math.round(damage * multiplier), 0);
     return damage;
   }
 
@@ -569,7 +583,7 @@ class OnUpdatePhaseCommand extends Command {
           player.streak = 0;
         }
         player.lastBattleResult = 'Defeat';
-        player.life = Math.max(0, player.life - this.computePlayerDamage(player.simulation.redTeam, player.experienceManager.level));
+        player.life = Math.max(0, player.life - this.computePlayerDamage(player.simulation.redTeam, player.experienceManager.level, this.state.stageLevel));
       } else if (player.simulation.redTeam.size == 0) {
         if (player.lastBattleResult == 'Win') {
           player.streak = Math.min(player.streak + 1, 5);
@@ -584,7 +598,7 @@ class OnUpdatePhaseCommand extends Command {
           player.streak = 0;
         }
         player.lastBattleResult = 'Draw';
-        player.life = Math.max(0, player.life - this.computePlayerDamage(player.simulation.redTeam, player.experienceManager.level));
+        player.life = Math.max(0, player.life - this.computePlayerDamage(player.simulation.redTeam, player.experienceManager.level, this.state.stageLevel));
       }
     });
   }
