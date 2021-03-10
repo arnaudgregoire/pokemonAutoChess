@@ -1,3 +1,263 @@
+const PKM = Object.freeze({
+  DITTO: "ditto",
+  BULBASAUR: "bulbasaur",
+  IVYSAUR: "ivysaur",
+  VENUSAUR: "venusaur",
+  CHARMANDER: "charmander",
+  CHARMELEON: "charmeleon",
+  CHARIZARD: "charizard",
+  SQUIRTLE: "squirtle",
+  WARTORTLE: "wartortle",
+  BLASTOISE: "blastoise",
+  GEODUDE: "geodude",
+  GRAVELER: "graveler",
+  GOLEM: "golem",
+  AZURILL: "azurill",
+  MARILL: "marill",
+  AZUMARILL: "azumarill",
+  ZUBAT: "zubat",
+  GOLBAT: "golbat",
+  CROBAT: "crobat",
+  MAREEP: "mareep",
+  FLAFFY: "flaffy",
+  AMPHAROS: "ampharos",
+  CLEFFA: "cleffa",
+  CLEFAIRY: "clefairy",
+  CLEFABLE: "clefable",
+  IGGLYBUFF: "igglybuff",
+  WIGGLYTUFF: "wygglytuff",
+  JIGGLYPUFF: "jigglypuff",
+  CATERPIE: "caterpie",
+  METAPOD: "metapod",
+  BUTTERFREE: "butterfree",
+  WEEDLE: "weedle",
+  KAKUNA: "kakuna",
+  BEEDRILL: "beedrill",
+  PIDGEY: "pidgey",
+  PIDGEOTTO: "pidgeotto",
+  PIDGEOT: "pidgeot",
+  HOPPIP: "hoppip",
+  SKIPLOOM: "skiploom",
+  JUMPLUFF: "jumpluff",
+  SEEDOT: "seedot",
+  NUZLEAF: "nuzleaf",
+  SHIFTRY: "shiftry",
+  STARLY: "starly",
+  STARAVIA: "staravia",
+  STARAPTOR: "staraptor",
+  CHIKORITA: "chikorita",
+  BAYLEEF: "bayleef",
+  MEGANIUM: "meganium",
+  CYNDAQUIL: "cyndaquil",
+  QUILAVA: "quilava",
+  TYPHLOSION: "typlosion",
+  TOTODILE: "totodile",
+  CROCONAW: "croconaw",
+  FERALIGATR: "feraligatr",
+  TREECKO: "treecko",
+  GROVYLE: "grovyle",
+  SCEPTILE: "sceptile",
+  TORCHIC: "torchic",
+  COMBUSKEN: "combusken",
+  BLAZIKEN: "blaziken",
+  MUDKIP: "mudkip",
+  MARSHTOMP: "marshtomp",
+  SWAMPERT: "swampert",
+  TURTWIG: "turtwig",
+  GROTLE: "grotle",
+  TORTERRA: "torterra",
+  CHIMCHAR: "chimchar",
+  MONFERNO: "monferno",
+  INFERNAPE: "infernape",
+  PIPLUP: "piplup",
+  PRINPLUP: "prinplup",
+  EMPOLEON: "empoleon",
+  NIDORANF: "nidoranF",
+  NIDORINA: "nidorina",
+  NIDOQUEEN: "nidoqueen",
+  NIDORANM: "nidoranM",
+  NIDORINO: "nidorino",
+  NIDOKING: "nidoking",
+  PICHU: "pichu",
+  PIKACHU: "pikachu",
+  RAICHU: "raichu",
+  MACHOP: "machop",
+  MACHOKE: "machoke",
+  MACHAMP: "machamp",
+  HORSEA: "horsea",
+  SEADRA: "seadra",
+  KINGDRA: "kingdra",
+  TRAPINCH: "trapinch",
+  VIBRAVA: "vibrava",
+  FLYGON: "flygon",
+  SPHEAL: "spheal",
+  SEALEO: "sealeo",
+  WALREIN: "walrein",
+  ARON: "aron",
+  LAIRON: "lairon",
+  AGGRON: "aggron",
+  MAGNEMITE: "magnemite",
+  MAGNETON: "magneton",
+  MAGNEZONE: "magnezone",
+  RHYHORN: "rhyhorn",
+  RHYDON: "rhydon",
+  RHYPERIOR: "rhyperior",
+  TOGEPI: "togepi",
+  TOGETIC: "togetic",
+  TOGEKISS: "togekiss",
+  DUSKULL: "duskull",
+  DUSCLOPS: "dusclops",
+  DUSKNOIR: "dusknoir",
+  LOTAD: "lotad",
+  LOMBRE: "lombre",
+  LUDICOLO: "ludicolo",
+  SHINX: "shinx",
+  LUXIO: "luxio",
+  LUXRAY: "luxray",
+  POLIWAG: "poliwag",
+  POLIWHIRL: "poliwhirl",
+  POLITOED: "politoed",
+  ABRA: "abra",
+  KADABRA: "kadabra",
+  ALAKAZAM: "alakazam",
+  GASTLY: "gastly",
+  HAUNTER: "haunter",
+  GENGAR: "gengar",
+  DRATINI: "dratini",
+  DRAGONAIR: "dragonair",
+  DRAGONITE: "dragonite",
+  LARVITAR: "larvitar",
+  PUPITAR: "pupitar",
+  TYRANITAR: "tyranitar",
+  SLAKOTH: "slakoth",
+  VIGOROTH: "vigoroth",
+  SLAKING: "slaking",
+  RALTS: "ralts",
+  KIRLIA: "kirlia",
+  GARDEVOIR: "gardevoir",
+  BAGON: "bagon",
+  SHELGON: "shelgon",
+  SALAMENCE: "salamence",
+  BELDUM: "beldum",
+  METANG: "metang",
+  METAGROSS: "metagross",
+  GIBLE: "gible",
+  GABITE: "gabite",
+  GARCHOMP: "garchomp",
+  ELEKID: "elekid",
+  ELECTABUZZ: "electabuzz",
+  ELECTIVIRE: "electivire",
+  MAGBY: "magby",
+  MAGMAR: "magmar",
+  MAGMORTAR: "magmortar",
+  MUNCHLAX: "munchlax",
+  SNORLAX: "snorlax",
+  GROWLITHE: "growlithe",
+  ARCANINE: "arcanine",
+  ONIX: "onix",
+  STEELIX: "steelix",
+  MEGASTEELIX: "mega-steelix",
+  SCYTHER: "scyther",
+  SCIZOR: "scizor",
+  MEGASCIZOR: "mega-scizor",
+  RIOLU: "riolu",
+  LUCARIO: "lucario",
+  MEGALUCARIO: "mega-lucario",
+  MAGIKARP: "magikarp",
+  RATTATA: "rattata",
+  RATICATE: "raticate",
+  SPEAROW: "spearow",
+  FEAROW: "fearow",
+  GYARADOS: "gyarados",
+  LUGIA: "lugia",
+  GIRATINA: "giratina",
+  ZAPDOS: "zapdos",
+  MOLTRES: "moltres",
+  ARTICUNO: "articuno",
+  DIALGA: "dialga",
+  PALKIA: "palkia",
+  SUICUNE: "suicune",
+  RAIKOU: "raikou",
+  ENTEI: "entei",
+  REGICE: "regice",
+  REGIROCK: "regirock",
+  REGISTEEL: "registeel",
+  KYOGRE: "kyogre",
+  GROUDON: "groudon",
+  RAYQUAZA: "rayquaza",
+  REGIGIGAS: "regigigas",
+  EEVEE: "eevee",
+  VAPOREON: "vaporeon",
+  JOLTEON: "jolteon",
+  FLAREON: "flareon",
+  ESPEON: "espeon",
+  UMBREON: "umbreon",
+  LEAFEON: "leafeon",
+  SYLVEON: "sylveon",
+  MEDITITE: "meditite",
+  MEDICHAM: "medicham",
+  MEGAMEDICHAM: "mega-medicham",
+  NUMEL: "numel",
+  CAMERUPT: "camerupt",
+  MEGACAMERUPT: "mega-camerupt",
+  SANDSHREW: "sandshrew",
+  DARKRAI: "darkrai",
+  LITWICK: "litwick",
+  LAMPENT: "lampent",
+  CHANDELURE: "chandelure",
+  SLOWPOKE: "slowpoke",
+  SLOWBRO: "slowbro",
+  SLOWKING: "slowking",
+  BELLSPROUT: "bellsprout",
+  WEEPINBELL: "weepinbell",
+  VICTREEBEL: "victreebel",
+  SWINUB: "swinub",
+  PILOSWINE: "piloswine",
+  MAMOSWINE: "mamoswine",
+  SNORUNT: "snorunt",
+  GLALIE: "glalie",
+  FROSLASS: "froslass",
+  SNOVER: "snover",
+  ABOMASNOW: "abomasnow",
+  MEGAABOMASNOW: "mega-abomasnow",
+  VANILLITE: "vanillite",
+  VANILLISH: "vanillish",
+  VANILLUXE: "vanilluxe",
+  GLACEON: "glaceon",
+  VOLCARONA: "volcarona",
+  LANDORUS: "landorus",
+  THUNDURUS: "thundrus",
+  TORNADUS: "tornadus",
+  KELDEO: "keldeo",
+  TERRAKION: "terrakion",
+  VIRIZION: "virizion",
+  COBALION: "cobalion",
+  MANAPHY: "manaphy",
+  ROTOM: "rotom",
+  SPIRITOMB: "spiritomb",
+  ABSOL: "absol",
+  LAPRAS: "lapras",
+  LATIAS: "latias",
+  LATIOS: "latios",
+  MESPRIT: "mesprit",
+  AZELF: "azelf",
+  UXIE: "uxie",
+  MEWTWO: "mewtwo",
+  KYUREM: "kyurem",
+  RESHIRAM: "reshiram",
+  ZEKROM: "zekrom",
+  CELEBI: "celebi",
+  VICTINI: "victini",
+  JIRACHI: "jirachi",
+  ARCEUS: "arceus",
+  DEOXYS: "deoxys",
+  SHAYMIN: "shaymin",
+  CRESSELIA: "cresselia",
+  HEATRAN: "heatran",
+  HOOH: "ho-Oh",
+  AERODACTYL:"aerodactyl"
+});
+
 const WORDS = Object.freeze({
   RANK:{
     'eng': 'Rank',
@@ -1363,7 +1623,6 @@ const TYPE_TRADUCTION = Object.freeze({
   }
 });
 
-
 const RARITY = Object.freeze({
   COMMON: 'COMMON',
   UNCOMMON: 'UNCOMMON',
@@ -1394,17 +1653,17 @@ const COST = Object.freeze({
 });
 
 const BOT_AVATAR = Object.freeze({
-  WATER1: 'squirtle',
-  FIRE1: 'charmander',
-  POISON1: 'zubat',
-  GRASS1: 'bulbasaur',
-  GROUND1: 'geodude',
+  WATER1: PKM.SQUIRTLE,
+  FIRE1: PKM.CHARMANDER,
+  POISON1: PKM.ZUBAT,
+  GRASS1: PKM.BULBASAUR,
+  GROUND1: PKM.GEODUDE,
   NORMAL1: 'jigglypuff',
   ELECTRIC1: 'pikachu',
-  MONSTER1: 'larvitar',
+  MONSTER1: PKM.LARVITAR,
   FIELD1: 'nidoqueen',
-  DRAGON1: 'dratini',
-  HUMAN1:'riolu',
+  DRAGON1: PKM.DRATINI,
+  HUMAN1:PKM.RIOLU,
   DARK: 'darkrai',
   GRASS2: 'shaymin',
   GROUND2: 'regirock',
@@ -1563,7 +1822,7 @@ const TYPE_DETAILS = Object.freeze({
         }
       ]
     },
-    pokemons: ['pidgey','starly','igglybuff','cleffa','eevee','togepi','slakoth','meditite','scyther']
+    pokemons: [PKM.PIDGEY,PKM.STARLY,PKM.IGGLYBUFF,PKM.CLEFFA,PKM.EEVEE,PKM.TOGEPI,PKM.SLAKOTH,PKM.MEDITITE,PKM.SCYTHER]
   },
   GRASS: {
     description:{
@@ -1610,7 +1869,7 @@ const TYPE_DETAILS = Object.freeze({
         }
       ]
     },
-    pokemons: ['bellsprout','seedot','hoppip','caterpie','treecko','leafeon','turtwig','chikorita','bulbasaur','lotad','snover']
+    pokemons: [PKM.BELLSPROUT,PKM.SEEDOT,PKM.HOPPIP,PKM.CATERPIE,PKM.TREECKO,PKM.LEAFEON,PKM.TURTWIG,PKM.CHIKORITA,PKM.BULBASAUR,PKM.LOTAD,PKM.SNOVER]
   },
   FIRE: {
     description:{
@@ -1645,7 +1904,7 @@ const TYPE_DETAILS = Object.freeze({
         }
       ]
     },
-    pokemons: ['charmander','cyndaquil','torchic','flareon','chimchar','litwick','magby','numel']
+    pokemons: [PKM.CHARMANDER,PKM.CYNDAQUIL,PKM.TORCHIC,PKM.FLAREON,PKM.CHIMCHAR,PKM.LITWICK,PKM.MAGBY,PKM.NUMEL]
   },
   WATER: {
     description:{
@@ -1692,7 +1951,7 @@ const TYPE_DETAILS = Object.freeze({
         }
       ]
     },
-    pokemons: ['azurill','squirtle','vaporeon','totodile','mudkip','piplup','horsea','spheal','lotad','poliwag']
+    pokemons: [PKM.AZURILL,PKM.SQUIRTLE,PKM.VAPOREON,PKM.TOTODILE,PKM.MUDKIP,PKM.PIPLUP,PKM.HORSEA,PKM.SPHEAL,PKM.LOTAD,PKM.POLIWAG]
   },
   ELECTRIC: {
     description:{
@@ -1715,7 +1974,7 @@ const TYPE_DETAILS = Object.freeze({
         }
       ]
     },
-    pokemons: ['mareep','pichu','jolteon','magnemite','shinx','elekid']
+    pokemons: [PKM.MAREEP,PKM.PICHU,PKM.JOLTEON,PKM.MAGNEMITE,PKM.SHINX,PKM.ELEKID]
   },
   FIGHTING: {
     description:{
@@ -1750,7 +2009,7 @@ const TYPE_DETAILS = Object.freeze({
         }
       ]
     },
-    pokemons: ['combusken','machop','poliwhirl','meditite','riolu']
+    pokemons: [PKM.COMBUSKEN,PKM.MACHOP,PKM.POLIWHIRL,PKM.MEDITITE,PKM.RIOLU]
   },
   PSYCHIC: {
     description:{
@@ -1797,7 +2056,7 @@ const TYPE_DETAILS = Object.freeze({
         }
       ]
     },
-    pokemons: ['slowpoke','espeon','togepi','abra','ralts','beldum']
+    pokemons: [PKM.SLOWPOKE,PKM.ESPEON,PKM.TOGEPI,PKM.ABRA,PKM.RALTS,PKM.BELDUM]
   },
   DARK: {
     description:{
@@ -1832,7 +2091,7 @@ const TYPE_DETAILS = Object.freeze({
         }
       ]
     },
-    pokemons: ['seedot','umbreon','duskull','gastly','larvitar']
+    pokemons: [PKM.SEEDOT,PKM.UMBREON,PKM.DUSKULL,PKM.GASTLY,PKM.LARVITAR]
   },
   METAL: {
     description:{
@@ -1867,7 +2126,7 @@ const TYPE_DETAILS = Object.freeze({
         }
       ]
     },
-    pokemons: ['prinplup','aron','magnemite','beldum','steelix','scizor','lucario']
+    pokemons: [PKM.PRINPLUP,PKM.ARON,PKM.MAGNEMITE,PKM.BELDUM,PKM.STEEELIX,PKM.SCIZOR,PKM.LUCARIO]
   },
   GROUND: {
     description:{
@@ -1914,7 +2173,7 @@ const TYPE_DETAILS = Object.freeze({
         }
       ]
     },
-    pokemons: ['geodude','mudkip','turtwig','trapinch','swinub','rhyhorn','gible','numel','onix']
+    pokemons: [PKM.GEODUDE,PKM.MUDKIP,PKM.TURTWIG,PKM.TRAPINCH,PKM.SWINUB,PKM.RHYHORN,PKM.GIBLE,PKM.NUMEL,PKM.ONIX]
   },
   POISON: {
     description:{
@@ -1949,7 +2208,7 @@ const TYPE_DETAILS = Object.freeze({
         }
       ]
     },
-    pokemons: ['bellsprout','weedle','caterpie','zubat','nidoranM','nidoranF','bulbasaur','gastly']
+    pokemons: [PKM.BELLSPROUT,PKM.WEEDLE,PKM.CATERPIE,PKM.ZUBAT,PKM.NIDORANM,PKM.NIDORANF,PKM.BULBASAUR,PKM.GASTLY]
   },
   DRAGON: {
     description:{
@@ -1984,7 +2243,7 @@ const TYPE_DETAILS = Object.freeze({
         }
       ]
     },
-    pokemons: ['horsea','vibrava','dratini','bagon','gible']
+    pokemons: [PKM.HORSEA,PKM.VIBRAVA,PKM.DRATINI,PKM.BAGON,PKM.GIBLE]
   },
   FIELD: {
     description:{
@@ -2031,7 +2290,7 @@ const TYPE_DETAILS = Object.freeze({
         }
       ]
     },
-    pokemons: ['mareep','eevee','cyndaquil','nidoranM','nidoranF','spheal','shinx','numel']
+    pokemons: [PKM.MAREEP,PKM.EEVEE,PKM.CYNDAQUIL,PKM.NIDORANM,PKM.NIDORANF,PKM.SPHEAL,PKM.SHINX,PKM.NUMEL]
   },
   MONSTER: {
     description:{
@@ -2078,7 +2337,7 @@ const TYPE_DETAILS = Object.freeze({
         }
       ]
     },
-    pokemons: ['squirtle','charmander','treecko','aron','rhyhorn','larvitar','gible']
+    pokemons: [PKM.SQUIRTLE,PKM.CHARMANDER,PKM.TREECKO,PKM.ARON,PKM.RHYHORN,PKM.LARVITAR,PKM.GIBLE]
   },
   HUMAN: {
     description:{
@@ -2125,7 +2384,7 @@ const TYPE_DETAILS = Object.freeze({
         }
       ]
     },
-    pokemons: ['chimchar','machop','abra','slakoth','elekid','magby','meditite','riolu']
+    pokemons: [PKM.CHIMCHAR,PKM.MACHOP,PKM.ABRA,PKM.SLAKOTH,PKM.ELEKID,PKM.MAGBY,PKM.MEDITITE,PKM.RIOLU]
   },
   AQUATIC: {
     description:{
@@ -2160,7 +2419,7 @@ const TYPE_DETAILS = Object.freeze({
         }
       ]
     },
-    pokemons: ['vaporeon','squirtle','totodile','slowpoke','horsea','lotad','poliwag','dratini']
+    pokemons: [PKM.VAPOREON,PKM.SQUIRTLE,PKM.TOTODILE,PKM.SLOWPOKE,PKM.HORSEA,PKM.LOTAD,PKM.POLIWAG,PKM.DRATINI]
   },
   BUG: {
     description:{
@@ -2195,7 +2454,7 @@ const TYPE_DETAILS = Object.freeze({
         }
       ]
     },
-    pokemons: ['caterpie','weedle','trapinch','scyther']
+    pokemons: [PKM.CATERPIE,PKM.WEEDLE,PKM.TRAPINCH,PKM.SCYTHER]
   },
   FLYING: {
     description:{
@@ -2242,7 +2501,7 @@ const TYPE_DETAILS = Object.freeze({
         }
       ]
     },
-    pokemons: ['starly','pidgey','hoppip','zubat','charizard','torchic','piplup','salamence']
+    pokemons: [PKM.STARLY,PKM.PIDGEY,PKM.HOPPIP,PKM.ZUBAT,PKM.CHARIZARD,PKM.TORCHIC,PKM.PIPLUP,PKM.SALAMENCE]
   },
   FLORA: {
     description:{
@@ -2277,7 +2536,7 @@ const TYPE_DETAILS = Object.freeze({
         }
       ]
     },
-    pokemons: ['hoppip','turtwig','chikorita','bulbasaur','leafeon']
+    pokemons: [PKM.HOPPIP,PKM.TURTWIG,PKM.CHIKORITA,PKM.BULBASAUR,PKM.LEAFEON]
   },
   MINERAL: {
     description:{
@@ -2312,7 +2571,7 @@ const TYPE_DETAILS = Object.freeze({
         }
       ]
     },
-    pokemons: ['geodude','aron','rhyhorn','larvitar','beldum','onix']
+    pokemons: [PKM.GEODUDE,PKM.ARON,PKM.RHYHORN,PKM.LARVITAR,PKM.BELDUM,PKM.ONIX]
   },
   AMORPH: {
     description:{
@@ -2335,7 +2594,7 @@ const TYPE_DETAILS = Object.freeze({
         }
       ]
     },
-    pokemons: ['ralts','litwick','gastly','duskull','snorunt']
+    pokemons: [PKM.RALTS,PKM.LITWICK,PKM.GASTLY,PKM.DUSKULL,PKM.SNORUNT]
   },
   FAIRY: {
     description:{
@@ -2370,7 +2629,7 @@ const TYPE_DETAILS = Object.freeze({
         }
       ]
     },
-    pokemons: ['azurill','cleffa','igglybuff','sylveon','pichu','vanillite','togepi']
+    pokemons: [PKM.AZURILL,PKM.CLEFFA,PKM.IGGLYBUFF,PKM.SYLVEON,PKM.PICHU,PKM.VANILLITE,PKM.TOGEPI]
   },
   ICE: {
     description:{
@@ -2405,9 +2664,10 @@ const TYPE_DETAILS = Object.freeze({
         }
       ]
     },
-    pokemons: ['swinub','glaceon','spheal','vanillite','snorunt','snover']
+    pokemons: [PKM.SWINUB,PKM.GLACEON,PKM.SPHEAL,PKM.VANILLITE,PKM.SNORUNT,PKM.SNOVER]
   }
 });
+
 
 const XP_TABLE = [1000, 1500, 2000, 2500, 2500, 2500, 2500, 2500, 2500, 2500, 3000, 3000, 3000, 3000, 3000, 3000, 3000, 3000, 3000, 3000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000];
 
@@ -2443,5 +2703,6 @@ module.exports = {
   ITEM_NAME,
   ITEM_DESCRIPTION,
   TYPE_DETAILS,
-  EFFECTS_ICON
+  EFFECTS_ICON,
+  PKM
 };

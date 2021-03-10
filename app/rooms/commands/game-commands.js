@@ -1,5 +1,5 @@
 const Command = require('@colyseus/command').Command;
-const {STATE, COST, TYPE, EFFECTS, ITEMS, XP_PLACE, XP_TABLE, RARITY} = require('../../models/enum');
+const {STATE, COST, TYPE, EFFECTS, ITEMS, XP_PLACE, XP_TABLE, RARITY, PKM} = require('../../models/enum');
 const Player = require('../../models/player');
 const PokemonFactory = require('../../models/pokemon-factory');
 const ItemFactory = require('../../models/item-factory');
@@ -53,7 +53,7 @@ class OnDragDropCommand extends Command {
           const pokemon = this.state.players.get(client.sessionId).board.get(detail.id);
           const x = parseInt(detail.x);
           const y = parseInt(detail.y);
-          if (pokemon.name == 'ditto') {
+          if (pokemon.name == PKM.DITTO) {
             const pokemonToClone = this.room.getPokemonByPosition(client.sessionId, x, y);
             if (pokemonToClone && pokemonToClone.rarity != RARITY.MYTHICAL) {
               dittoReplaced = true;
@@ -109,11 +109,11 @@ class OnDragDropCommand extends Command {
 
           this.state.players.get(client.sessionId).board.forEach((pokemon, id) => {
             if (pokemon.positionX == x && pokemon.positionY == y && pokemon.items.length < 3) {
-              if (pokemon.name == 'eevee' && item == ITEMS.WATER_STONE) {
+              if (pokemon.name == PKM.EEVEE && item == ITEMS.WATER_STONE) {
                 evolve = true;
                 const x = pokemon.positionX;
                 const y = pokemon.positionY;
-                eevolution = PokemonFactory.createPokemonFromName('vaporeon');
+                eevolution = PokemonFactory.createPokemonFromName(PKM.VAPOREON);
                 eevolution.positionX = x;
                 eevolution.positionY = y;
                 eevolution.items.item0 = pokemon.items.item0;
@@ -123,11 +123,11 @@ class OnDragDropCommand extends Command {
                 this.state.players.get(client.sessionId).board.delete(id);
                 success = true;
                 message.updateItems = false;
-              } else if (pokemon.name == 'eevee' && item == ITEMS.FIRE_STONE) {
+              } else if (pokemon.name == PKM.EEVEE && item == ITEMS.FIRE_STONE) {
                 evolve = true;
                 const x = pokemon.positionX;
                 const y = pokemon.positionY;
-                eevolution = PokemonFactory.createPokemonFromName('flareon');
+                eevolution = PokemonFactory.createPokemonFromName(PKM.FLAREON);
                 eevolution.positionX = x;
                 eevolution.positionY = y;
                 eevolution.items.item0 = pokemon.items.item0;
@@ -137,11 +137,11 @@ class OnDragDropCommand extends Command {
                 this.state.players.get(client.sessionId).board.delete(id);
                 success = true;
                 message.updateItems = false;
-              } else if (pokemon.name == 'eevee' && item == ITEMS.THUNDER_STONE) {
+              } else if (pokemon.name == PKM.EEVEE && item == ITEMS.THUNDER_STONE) {
                 evolve = true;
                 const x = pokemon.positionX;
                 const y = pokemon.positionY;
-                eevolution = PokemonFactory.createPokemonFromName('jolteon');
+                eevolution = PokemonFactory.createPokemonFromName(PKM.JOLTEON);
                 eevolution.positionX = x;
                 eevolution.positionY = y;
                 eevolution.items.item0 = pokemon.items.item0;
@@ -151,11 +151,11 @@ class OnDragDropCommand extends Command {
                 this.state.players.get(client.sessionId).board.delete(id);
                 success = true;
                 message.updateItems = false;
-              } else if (pokemon.name == 'eevee' && item == ITEMS.NIGHT_STONE) {
+              } else if (pokemon.name == PKM.EEVEE && item == ITEMS.NIGHT_STONE) {
                 evolve = true;
                 const x = pokemon.positionX;
                 const y = pokemon.positionY;
-                eevolution = PokemonFactory.createPokemonFromName('umbreon');
+                eevolution = PokemonFactory.createPokemonFromName(PKM.UMBREON);
                 eevolution.positionX = x;
                 eevolution.positionY = y;
                 eevolution.items.item0 = pokemon.items.item0;
@@ -165,11 +165,11 @@ class OnDragDropCommand extends Command {
                 this.state.players.get(client.sessionId).board.delete(id);
                 success = true;
                 message.updateItems = false;
-              } else if (pokemon.name == 'eevee' && item == ITEMS.MOON_STONE) {
+              } else if (pokemon.name == PKM.EEVEE && item == ITEMS.MOON_STONE) {
                 evolve = true;
                 const x = pokemon.positionX;
                 const y = pokemon.positionY;
-                eevolution = PokemonFactory.createPokemonFromName('sylveon');
+                eevolution = PokemonFactory.createPokemonFromName(PKM.SYLVEON);
                 eevolution.positionX = x;
                 eevolution.positionY = y;
                 eevolution.items.item0 = pokemon.items.item0;
@@ -179,11 +179,11 @@ class OnDragDropCommand extends Command {
                 this.state.players.get(client.sessionId).board.delete(id);
                 success = true;
                 message.updateItems = false;
-              } else if (pokemon.name == 'eevee' && item == ITEMS.LEAF_STONE) {
+              } else if (pokemon.name == PKM.EEVEE && item == ITEMS.LEAF_STONE) {
                 evolve = true;
                 const x = pokemon.positionX;
                 const y = pokemon.positionY;
-                eevolution = PokemonFactory.createPokemonFromName('leafeon');
+                eevolution = PokemonFactory.createPokemonFromName(PKM.LEAFEON);
                 eevolution.positionX = x;
                 eevolution.positionY = y;
                 eevolution.items.item0 = pokemon.items.item0;
@@ -193,11 +193,11 @@ class OnDragDropCommand extends Command {
                 this.state.players.get(client.sessionId).board.delete(id);
                 success = true;
                 message.updateItems = false;
-              } else if (pokemon.name == 'eevee' && item == ITEMS.DAWN_STONE) {
+              } else if (pokemon.name == PKM.EEVEE && item == ITEMS.DAWN_STONE) {
                 evolve = true;
                 const x = pokemon.positionX;
                 const y = pokemon.positionY;
-                eevolution = PokemonFactory.createPokemonFromName('espeon');
+                eevolution = PokemonFactory.createPokemonFromName(PKM.ESPEON);
                 eevolution.positionX = x;
                 eevolution.positionY = y;
                 eevolution.items.item0 = pokemon.items.item0;
@@ -207,11 +207,11 @@ class OnDragDropCommand extends Command {
                 this.state.players.get(client.sessionId).board.delete(id);
                 success = true;
                 message.updateItems = false;
-              } else if (pokemon.name == 'eevee' && item == ITEMS.ICY_ROCK) {
+              } else if (pokemon.name == PKM.EEVEE && item == ITEMS.ICY_ROCK) {
                 evolve = true;
                 const x = pokemon.positionX;
                 const y = pokemon.positionY;
-                eevolution = PokemonFactory.createPokemonFromName('glaceon');
+                eevolution = PokemonFactory.createPokemonFromName(PKM.GLACEON);
                 eevolution.positionX = x;
                 eevolution.positionY = y;
                 eevolution.items.item0 = pokemon.items.item0;
@@ -452,7 +452,7 @@ class UtilsCommand extends Command {
     let boardSize = 0;
 
     board.forEach((pokemon, key) => {
-      if (pokemon.positionY == 0 && pokemon.name != 'ditto') {
+      if (pokemon.positionY == 0 && pokemon.name != PKM.DITTO) {
         boardSize ++;
       }
     });
@@ -475,7 +475,7 @@ class UtilsCommand extends Command {
     let pkm;
     let found = false;
     board.forEach((pokemon, key) => {
-      if (pokemon.positionY == 0 && pokemon.name != 'ditto' && !found) {
+      if (pokemon.positionY == 0 && pokemon.name != PKM.DITTO && !found) {
         found = true;
         pkm = pokemon;
       }
